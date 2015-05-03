@@ -1,7 +1,7 @@
 {
   "name": "keyb",
-  "version": "1.0.0",
-  "description": "Polling the state of the keyboard.",
+  "version": "1.0.1",
+  "description": "Poll the state of the keyboard.",
   "main": "index.js",
   "repository": {
     "type": "git",

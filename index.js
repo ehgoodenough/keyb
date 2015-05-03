@@ -12,7 +12,7 @@ var Keyb = {
     },
     setUp: function(key) {
         delete this.data[key]
-    }
+    },
     data: new Object()
 }
 
