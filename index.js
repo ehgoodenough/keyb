@@ -1,26 +1,29 @@
 var vkey = require("vkey")
 
 var Keyb = {
-    is: function(key) {
+    isDown: function(key) {
         return this.data[key] === true
     },
-    down: function(key) {
+    isUp: function(key) {
+        return this.data[key] !== true
+    },
+    setDown: function(key) {
         this.data[key] = true
     },
-    up: function(key) {
+    setUp: function(key) {
         delete this.data[key]
     }
     data: new Object()
 }
 
 document.addEventListener("keydown", function(event) {
-    if(!Keyb.is(vkey[event.keyCode])) {
-        Keyb.down(vkey[event.keyCode])
+    if(Keyb.isUp(vkey[event.keyCode])) {
+        Keyb.setDown(vkey[event.keyCode])
     }
 })
 
 document.addEventListener("keyup", function(event) {
-    Keyb.up(vkey[event.keyCode])
+    Keyb.setUp(vkey[event.keyCode])
 })
 
 module.exports = Keyb
