@@ -1,6 +1,6 @@
 {
   "name": "keyb",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Poll the state of the keyboard.",
   "main": "index.js",
   "repository": {
