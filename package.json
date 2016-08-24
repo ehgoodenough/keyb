@@ -1,15 +1,13 @@
 {
   "name": "keyb",
-  "version": "1.0.4",
-  "description": "Poll the state of the keyboard.",
+  "version": "1.1.0",
   "main": "index.js",
+  "description": "Poll the state of the keyboard.",
+  "author": "Andrew McPherson <@ehgoodenough>",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/ehgoodenough/keyb"
-  },
-  "author": {
-    "name": "Andrew McPherson",
-    "email": "ehgoodenough@gmail.com"
   },
   "dependencies": {
     "vkey": "~1.0.0"

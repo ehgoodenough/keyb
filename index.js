@@ -2,44 +2,19 @@ var vkey = require("vkey")
 
 var Keyb = {
     isDown: function(key) {
-        if(this.data[key] == undefined) {
-            this.data[key] = -1
-        }
-        return this.data[key] >= 0
+        return this.data[key] != undefined
     },
-    isJustDown: function(key) {
-        if(this.data[key] == undefined) {
-            this.data[key] = -1
-        }
-        if(this.data[key] == 0) {
-            this.data[key] += 1
-            return true
-        } else {
-            return false
-        }
+    isJustDown: function(key, delta) {
+        return window.performance.now() - this.data[key] < (delta || 1000 / 60)
     },
     isUp: function(key) {
-        if(this.data[key] == undefined) {
-            this.data[key] = -1
-        }
-        return this.data[key] <= 0
-    },
-    isJustUp: function(key) {
-        if(this.data[key] == undefined) {
-            this.data[key] = -1
-        }
-        if(this.data[key] == -1) {
-            this.data[key] -= 1
-            return true
-        } else {
-            return false
-        }
+        return this.data[key] == undefined
     },
     setDown: function(key) {
-        this.data[key] = 0
+        this.data[key] = window.performance.now()
     },
     setUp: function(key) {
-        this.data[key] = -1
+        delete this.data[key]
     },
     data: new Object()
 }
