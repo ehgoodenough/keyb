@@ -3,5 +3,5 @@ node_modules
 
 # Temporary
 .DS_Store
-# *.log
+*.log
 ._*
