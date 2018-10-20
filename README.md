@@ -1,36 +1,28 @@
-# keyb #
+# Keyb #
 
 A javascript utility for polling the state of the keyboard.
 
-## Installation ##
+### Usage ###
 
+For any given frame of your game, you can check to see if a key is pressed using `Keyb.isPressed(keyname)`:
+
+```js
+if(Keyb.isPressed("D") || Keyb.isPressed("<right>") {
+    player.position.x += 1
+}
 ```
-npm install keyb
+
+All methods accept a `keyname` as defined in [vkey](https://github.com/chrisdickinson/vkey), such as `1` or `A` or `<enter>`. Go to their [test page](http://didact.us/vkey) to experiment with how the keyboard is mapped.
+
+You can also check if a key was just pressed down using `Keyb.wasJustPressed(keyname, delta)`:
+
+```js
+if(Keyb.wasJustPressed("<space>")) {
+    player.throwPunch()
+}
 ```
 
-## Usage ##
-
-All methods accept `key` as strings from [vkey](https://github.com/chrisdickinson/vkey), such as `1` or `A` or `<enter>`. Go to their [test page](http://didact.us/vkey) to experiment with how the keyboard is mapped.
-
-### `keyb.isDown(key)` ###
-
-Returns true if the key is pushed.
-
-### `keyb.isUp(key)` ###
-
-Returns true if the key is not pushed.
-
-### `keyb.isJustDown(key, [delta])` ###
-
-Returns true if the key was pushed within the last few milliseconds, given as `delta`. If the `delta` is not given, the range is assumed to be 16.667ms, or 60fps.
-
-### `keyb.setDown(key)` ###
-
-Mocks a key being pushed.
-
-### `keyb.setUp(key)` ###
-
-Mocks a key being released.
+The older API is still supported, including `isDown` and `isJustDown`.
 
 ## License ##
 
