@@ -1,5 +1,7 @@
+# Dependencies
 node_modules
 
-._*
-*.log
+# Temporary
 .DS_Store
+# *.log
+._*
