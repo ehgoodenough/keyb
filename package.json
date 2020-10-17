@@ -10,6 +10,6 @@
     "url": "https://github.com/ehgoodenough/keyb"
   },
   "dependencies": {
-    "vkey": "~1.0.0"
+    "vkey": "~1.0.1"
   }
 }
