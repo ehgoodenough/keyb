@@ -1,5 +1,4 @@
 const vkey = require("vkey")
-const now = window.performance.now
 
 const DEFAULT_DELTA = 1000 / 60
 
@@ -18,25 +17,25 @@ Keyb.isUnpressed = function(key) {
 Keyb.wasJustPressed = function(key, delta) {
     return this.data[key] != undefined
         && this.data[key].state == "pressed"
-        && now() - this.data[key].time < (delta || DEFAULT_DELTA)
+        && window.performance.now() - this.data[key].time < (delta || DEFAULT_DELTA)
 }
 
 Keyb.wasJustUnpressed = function(key, delta) {
     return this.data[key] != undefined
         && this.data[key].state == "unpressed"
-        && now() - this.data[key].time < (delta || DEFAULT_DELTA)
+        && window.performance.now() - this.data[key].time < (delta || DEFAULT_DELTA)
 }
 
 Keyb.setPressed = function(keycode) {
     const key = vkey[keycode]
     if(this.isPressed(key) == false) {
-        this.data[key] = {"time": now(), "state": "pressed"}
+        this.data[key] = {"time": window.performance.now(), "state": "pressed"}
     }
 }
 
 Keyb.setNotPressed = function(keycode) {
     const key = vkey[keycode]
-    this.data[key] = {"time": now(), "state": "unpressed"}
+    this.data[key] = {"time": window.performance.now(), "state": "unpressed"}
 }
 
 Keyb.isDown = Keyb.isPressed

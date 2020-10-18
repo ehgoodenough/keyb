@@ -1,6 +1,6 @@
 {
   "name": "keyb",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "main": "index.js",
   "description": "Poll the state of the keyboard.",
   "author": "Andrew McPherson <@ehgoodenough>",
