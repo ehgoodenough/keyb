@@ -1,4 +1,4 @@
-# Keyb #
+# Keyb ![](https://github.com/ehgoodenough/keyb/workflows/Release/badge.svg) #
 
 A javascript utility for polling the state of the keyboard.
 
