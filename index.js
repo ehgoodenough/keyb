@@ -17,13 +17,13 @@ Keyb.isUnpressed = function(key) {
 Keyb.wasJustPressed = function(key, delta) {
     return this.data[key] != undefined
         && this.data[key].state == "pressed"
-        && window.performance.now() - this.data[key].time < (delta || DEFAULT_DELTA)
+        && window.performance.now() - this.data[key].time < (delta || Keyb.delta || DEFAULT_DELTA)
 }
 
 Keyb.wasJustUnpressed = function(key, delta) {
     return this.data[key] != undefined
         && this.data[key].state == "unpressed"
-        && window.performance.now() - this.data[key].time < (delta || DEFAULT_DELTA)
+        && window.performance.now() - this.data[key].time < (delta || Keyb.delta || DEFAULT_DELTA)
 }
 
 Keyb.setPressed = function(keycode) {
