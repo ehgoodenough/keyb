@@ -28,7 +28,16 @@ Keyb.wasJustUnpressed = function(key, delta) {
 
 Keyb.setPressed = function(keycode) {
     const key = vkey[keycode]
+    if(Keyb.isPressed(key)) return
     this.data[key] = {"time": window.performance.now(), "state": "pressed"}
+
+    if(key == "<meta>") {
+        Object.values(this.data).forEach((data) => {
+            if(data.state == "pressed") {
+                data.state == "unpressed"
+            }
+        })
+    }
 }
 
 Keyb.setNotPressed = function(keycode) {
